@@ -187,6 +187,7 @@
 
         if (self.loginManager == nil) {
             self.loginManager = [[FBSDKLoginManager alloc] init];
+            self.loginManager.loginBehavior = FBSDKLoginBehaviorWeb;
         }
         [self.loginManager logInWithReadPermissions:permissions fromViewController:[self topMostController] handler:loginHandler];
         return;
@@ -239,6 +240,7 @@
         // Close the session and clear the cache
         if (self.loginManager == nil) {
             self.loginManager = [[FBSDKLoginManager alloc] init];
+            self.loginManager.loginBehavior = FBSDKLoginBehaviorWeb;
         }
 
         [self.loginManager logOut];
